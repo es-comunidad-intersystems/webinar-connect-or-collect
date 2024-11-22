@@ -1,0 +1,13 @@
+#Notes: This docker-compose to test just mariadb separately while testing
+services:
+  mariadb:
+    build: .
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      - ENV MYSQL_ROOT_PASSWORD=unsecure
+      - ENV MYSQL_DATABASE=crm
+    volumes:
+      - ../databases/mariadb:/var/lib/mysql
+      - ../data/crm:/var/lib/mysql_files

@@ -1,0 +1,36 @@
+services:
+  onlinestore:
+    build:
+      context: ./onlinestore
+    container_name: onlinestore
+    ports:
+      - "5432:5432"
+    environment:
+      - ENV POSTGRES_DB=onlinestore
+      - ENV POSTGRES_USER=admin
+      - ENV POSTGRES_PASSWORD=unsecure
+    volumes:
+      - ./databases/postgres:/var/lib/postgresql/data
+      - ./data/onlinestore:/onlinestore
+  pgclient:
+    build:
+      context: ./pgclient
+    container_name: pgclient
+    depends_on:
+      - onlinestore
+  iris:
+    build:
+      context: ./iris
+      target: final
+    container_name: iris
+    restart: always
+    command: --check-caps false --ISCAgent false
+    ports:
+      - "41972:1972"
+      - "42772:52773"
+    volumes:
+      - ./databases/iris:/home/irisowner/dev
+      - ./data:/data
+    
+
+  

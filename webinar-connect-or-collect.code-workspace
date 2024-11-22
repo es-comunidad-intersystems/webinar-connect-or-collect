@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"name": "main",
+			"path": "."
+		},
+		{
+			"name": "crm",
+			"path": "crm"
+		},
+		{
+			"name": "onlinestore",
+			"path": "onlinestore"
+		},
+		{
+			"name": "iris",
+			"path": "iris"
+		},
+		{
+			"name": "iris:IRISAPP (read-only)",
+			"uri": "isfs-readonly://iris:irisapp/?generated=1&system=1"
+		}
+	],
+	"settings": {
+		"objectscript.conn": {
+			"server": "iris",
+			"ns": "irisapp",
+			"active": true
+		},
+		"intersystems.servers": {
+			"iris": {
+				"webServer": {
+					"scheme":"http",
+					"host":"localhost",
+					"port": 42772
+				}
+			}
+		}
+	}
+}
