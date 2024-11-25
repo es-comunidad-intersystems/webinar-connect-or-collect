@@ -31,6 +31,15 @@ services:
     volumes:
       - ./databases/iris:/home/irisowner/dev
       - ./data:/data
-    
+  jupyter:
+    build:
+      context: ./jupyter
+    container_name: jupyter
+    restart: always
+    ports:
+      - 48888:8888 # 8888 is the docker jupyter service port
+      #- 36026:6006 # 6006 is the tensorboard port
+    volumes:
+    - ./data/notebooks:/notebooks   #shared volumes
 
   
