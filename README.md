@@ -7,7 +7,7 @@ Exploring the Connect or Collect Paradigm with Intersystems IRIS as a platform f
 
 We use following scenario, with data located in different applications, to demonstrate the "connect or collect" paradigm.
 
-<img src="./data/notebooks/img/scenario.png>
+<img src="data/notebooks/img/scenario.png">
 
 
 
