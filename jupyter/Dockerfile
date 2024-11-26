@@ -20,7 +20,7 @@ RUN pip install intersystems_irispython-3.2.0-py3-none-any.whl
 
 # install python libs
 COPY requirements.txt ./ 
-COPY intersystems-jdbc-3.1.0.jar ./
+COPY intersystems-jdbc-3.9.0.jar ./
 
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
