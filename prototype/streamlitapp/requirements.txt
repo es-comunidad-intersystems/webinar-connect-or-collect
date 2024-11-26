@@ -1,4 +1,0 @@
-streamlit==1.40.0
-psycopg2-binary
-pandas
-streamlit-aggrid
